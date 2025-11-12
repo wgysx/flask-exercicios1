@@ -15,5 +15,9 @@ def versao():
 def saudar(nome):
     return f'Olá, {nome.capitalize()}!'
 
+@app.route('/quadrado/<int:n>')
+def quadrado(n):
+    return f'{n}² = {n*n}'
+
 if __name__ == '__main__':
     app.run(debug=True)
