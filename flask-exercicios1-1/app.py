@@ -11,10 +11,6 @@ def versao():
     versao = "1.1.0"
     return f"App v{versao}"
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
 @app.route('/saudar/<nome>')
 def saudar(nome):
     return f'Olá, {nome.capitalize()}!'
@@ -23,15 +19,13 @@ def saudar(nome):
 def quadrado(n):
     return f'{n}² = {n*n}'
 
+@app.route('/home')
+def home():
+    return redirect('/')
 
 @app.route('/pagina')
 def pagina():
     return render_template('pagina.html')
-
-
-@app.route('/home')
-def home():
-    return redirect('/')
 
 @app.route('/buscar/<item>')
 def buscar(item):
@@ -40,3 +34,6 @@ def buscar(item):
         if i == item:
             return f'Item "{item}" encontrado.'
     return f'Item "{item}" não encontrado.'
+
+if __name__ == '__main__':
+    app.run(debug=True)
