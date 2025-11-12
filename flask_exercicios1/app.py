@@ -19,5 +19,13 @@ def saudar(nome):
 def quadrado(n):
     return f'{n}² = {n*n}'
 
+@app.route('/home')
+def home():
+    return redirect('/')
+
+@app.route('/pagina')
+def pagina():
+    return render_template('pagina.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
