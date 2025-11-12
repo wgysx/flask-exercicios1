@@ -32,8 +32,8 @@ def buscar(item):
     itens = ['maçã', 'banana', 'laranja', 'uva']
     for i in itens:
         if i == item:
-            return f'Item "{item}" encontrado.'
-    return f'Item "{item}" não encontrado.'
+            return f'Item \"{item}\" encontrado.'
+    return f'Item \"{item}\" não encontrado.'
 
 if __name__ == '__main__':
     app.run(debug=True)
