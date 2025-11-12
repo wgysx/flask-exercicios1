@@ -22,3 +22,8 @@ def saudar(nome):
 @app.route('/quadrado/<int:n>')
 def quadrado(n):
     return f'{n}² = {n*n}'
+
+
+@app.route('/pagina')
+def pagina():
+    return render_template('pagina.html')
