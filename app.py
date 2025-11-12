@@ -27,3 +27,16 @@ def quadrado(n):
 @app.route('/pagina')
 def pagina():
     return render_template('pagina.html')
+
+
+@app.route('/home')
+def home():
+    return redirect('/')
+
+@app.route('/buscar/<item>')
+def buscar(item):
+    itens = ['maçã', 'banana', 'laranja', 'uva']
+    for i in itens:
+        if i == item:
+            return f'Item "{item}" encontrado.'
+    return f'Item "{item}" não encontrado.'
